@@ -114,12 +114,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
 # begin /* SET GENCODE_SM */
-set(GENCODE_SM10
-  -gencode=arch=compute_10,code=sm_10 -gencode=arch=compute_10,code=compute_10)
-set(GENCODE_SM13
-  -gencode=arch=compute_13,code=sm_13 -gencode=arch=compute_13,code=compute_13)
-set(GENCODE_SM20
-  -gencode=arch=compute_20,code=sm_20 -gencode=arch=compute_20,code=compute_20)
 set(GENCODE_SM30
   -gencode=arch=compute_30,code=sm_30 -gencode=arch=compute_30,code=compute_30)
 set(GENCODE_SM35
@@ -134,14 +128,8 @@ set(GENCODE_SM60
   -gencode=arch=compute_60,code=sm_60 -gencode=arch=compute_60,code=compute_60)
 set(GENCODE_SM61
   -gencode=arch=compute_61,code=sm_61 -gencode=arch=compute_61,code=compute_61)
-set(GENCODE_SM70
-  -gencode=arch=compute_70,code=sm_70 -gencode=arch=compute_70,code=compute_70)
-set(GENCODE_SM72
-  -gencode=arch=compute_72,code=sm_72 -gencode=arch=compute_72,code=compute_72)
-set(GENCODE_SM75
-  -gencode=arch=compute_75,code=sm_75 -gencode=arch=compute_75,code=compute_75)
 
-#set(GENCODE -gencode=arch=compute_10,code=compute_10) # at least generate PTX
+set(GENCODE -gencode=arch=compute_30,code=compute_30) # at least generate PTX
 # end /* SET GENCODE_SM */
 
 # begin /* Configure GUNROCK build options */
