@@ -26,7 +26,7 @@ else (WARNING_DEP_FLAG)
 endif (WARNING_DEP_FLAG)
 # end /* Suppress "deprecated auto_ptr" warnings caused by moderngpu */
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11 -g")
 
 option(CMAKE_VERBOSE_MAKEFILE ON)
 
@@ -215,7 +215,7 @@ option(GUNROCK_GENCODE_SM20
 
 option(GUNROCK_GENCODE_SM30
   "ON to generate code for Compute Capability 3.0 devices (e.g. Tesla K10)"
-  OFF)
+  ON)
 
 option(GUNROCK_GENCODE_SM35
   "ON to generate code for Compute Capability 3.5 devices (e.g. Tesla K40)"
@@ -247,7 +247,7 @@ endif ()
 if (CUDA_VERSION VERSION_EQUAL "9.0" OR CUDA_VERSION VERSION_GREATER "9.0")
   option(GUNROCK_GENCODE_SM70
     "ON to generate code for Compute Capability 7.0 devices (e.g. Volta V100)"
-    ON)
+    OFF)
   option(GUNROCK_GENCODE_SM72
     "ON to generate code for Compute Capability 7.2 devices (e.g. Jetson AGX Xavier)"
     OFF)
@@ -323,7 +323,7 @@ endif (CUDA_VERBOSE_PTXAS)
 
 # c++11 is required
 # Already set above. Causes build error on Ubuntu 18.04.1 LTS 
-#set(CUDA_NVCC_FLAGS -std=c++11)
+#set(CUDA_NVCC_FLAGS -std=c++11 )
 set(CUDA_LIBRARIES ${CUDA_LIBRARIES} ${CUDA_curand_LIBRARY})
 
 if(GUNROCK_BUILD_LIB)
